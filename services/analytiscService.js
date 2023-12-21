@@ -1,17 +1,17 @@
 import {ApiCallModel} from "../models/apiCall.model.js";
 
 export const analyticsService = {
-    async getLastCalledEndpoint(req, res) {
+    async getLastCalledEndpoint() {
         return ApiCallModel.findOne().sort({timestamp: -1});
     },
-    async mostCalledEndpoint(req, res) {
+    async mostCalledEndpoint() {
         return ApiCallModel.aggregate([
             {$group: {_id: '$endpoint', count: {$sum: 1}}},
             {$sort: {count: -1}},
             {$limit: 1}
         ]);
     },
-    async numberOfCallsPerEndpoint(req, res) {
+    async numberOfCallsPerEndpoint() {
         return ApiCallModel.aggregate([
             {$group: {_id: '$endpoint', count: {$sum: 1}}},
             {$sort: {_id: 1}}
