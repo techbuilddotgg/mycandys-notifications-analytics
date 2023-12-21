@@ -6,6 +6,6 @@ const router = express.Router();
 router.get('/lastCalledEndpoint', analyticsController.getLastCalledEndpoint);
 router.get('/mostCalledEndpoint', analyticsController.mostCalledEndpoint);
 router.get('/numberOfCallsPerEndpoint', analyticsController.numberOfCallsPerEndpoint);
-router.get('/updateData', analyticsController.updateData);
+router.post('/updateData', analyticsController.updateData);
 
 export default router;

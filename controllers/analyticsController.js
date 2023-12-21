@@ -27,8 +27,9 @@ export const analyticsController = {
     },
     async updateData(req, res) {
         try {
-            const analytics = await analyticsService.updateData();
-            res.status(200).send(analytics);
+            const { calledService } = req.body;
+            const analytics = await analyticsService.updateData(calledService);
+            res.status(201).json(analytics);
         } catch (err) {
             res.status(400).json(err);
         }
