@@ -50,7 +50,7 @@ router.get('/numberOfCallsPerEndpoint', analyticsController.numberOfCallsPerEndp
  *       - application/json
  *     parameters:
  *       - in: body
- *         name: calledService
+ *         name: requestBody
  *         required: true
  *         description: The endpoint called by the remote service.
  *         schema:
