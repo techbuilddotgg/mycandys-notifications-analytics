@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /analytics/getLastCalledEndpoint:
+ * /analytics/lastCalledEndpoint:
  *   get:
  *     summary: Get the latest accessed endpoint.
  *     responses:
