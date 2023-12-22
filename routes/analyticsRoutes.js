@@ -41,7 +41,7 @@ router.get('/mostCalledEndpoint', analyticsController.mostCalledEndpoint);
 router.get('/numberOfCallsPerEndpoint', analyticsController.numberOfCallsPerEndpoint);
 /**
  * @swagger
- * /stats:
+ * /analytics/updateData:
  *   post:
  *     summary: Update statistics based on a remote service call.
  *     consumes:
